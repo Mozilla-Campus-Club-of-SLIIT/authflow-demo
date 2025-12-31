@@ -18,7 +18,7 @@ export default function Callback() {
       if (code === null) return console.error("bad request");
       try {
         const response = await fetch(
-          `${AUTH_SERVICE_URL}/api/token?code=${code}`,
+          `${AUTH_SERVICE_URL}/api/token?code=${encodeURIComponent(code)}`,
           {
             method: "POST",
           }
